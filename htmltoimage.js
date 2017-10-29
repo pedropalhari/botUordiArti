@@ -29,7 +29,7 @@ function HTMLtoImage(message, type = "wordart blues", height, width) {
 
 
         //Escreve em um arquivo HTML que o phantomJS vai ler
-        fs.writeFile("C:/users/pedro/desktop/amon/index.html",
+        fs.writeFile(__dirname + "/index.html",
             html,
             async function (err) {
                 if (err) {

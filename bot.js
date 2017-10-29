@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const HTMLtoImage = require('./htmltoimage');
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = '473034799:AAGB6fgz-MaIKn7BdS9Hgd9Kr5JE2LbizKE';
+const token = require('./environment');
 
 // Create a bot that uses 'polling' to fetch new updates
 var bot = new TelegramBot(token, { polling: true });
@@ -45,7 +45,7 @@ bot.on('message', (msg) => {
     //Chama a função, como callback envia a imagem pro cara
     HTMLtoImage(txt, "wordart rainbow", height, width).then(() => {
         // send a message to the chat acknowledging receipt of their message
-        bot.sendPhoto(chatId, 'C:/users/pedro/desktop/amon/teste.png');
+        bot.sendPhoto(chatId, __dirname + '/teste.png');
     });
 
 
